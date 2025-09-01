@@ -1,0 +1,6 @@
+[submodule "leaveService"]
+	path = leaveService
+	url = https://github.com/saikumar457LL/leaveService
+[submodule "authService"]
+	path = authService
+	url = https://github.com/saikumar457LL/authService
