@@ -1,0 +1,1930 @@
+{
+	"info": {
+		"_postman_id": "561da51b-e301-43a9-81ad-4b036a324e0e",
+		"name": "LeaveApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9524067",
+		"_collection_link": "https://sign44-1050.postman.co/workspace/Sign~ac93cfc8-eeaf-489f-a8f5-b94aafad594a/collection/9524067-561da51b-e301-43a9-81ad-4b036a324e0e?action=share&source=collection_link&creator=9524067"
+	},
+	"item": [
+		{
+			"name": "leaveService",
+			"item": [
+				{
+					"name": "leave",
+					"item": [
+						{
+							"name": "admin",
+							"item": [
+								{
+									"name": "GET leave/admin/fetch_user_leaves",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/admin/fetch_user_leaves?uuid=92142c3b-0eee-41f3-81b5-b2f982e5470e",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"admin",
+												"fetch_user_leaves"
+											],
+											"query": [
+												{
+													"key": "uuid",
+													"value": "92142c3b-0eee-41f3-81b5-b2f982e5470e"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{leave_baseUrl}}/leave/admin/fetch_user_leaves?uuid=92142c3b-0eee-41f3-81b5-b2f982e5470e",
+													"host": [
+														"{{leave_baseUrl}}"
+													],
+													"path": [
+														"leave",
+														"admin",
+														"fetch_user_leaves"
+													],
+													"query": [
+														{
+															"key": "uuid",
+															"value": "92142c3b-0eee-41f3-81b5-b2f982e5470e"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 04 Sep 2025 11:07:13 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"username\": null,\n            \"leaveType\": {\n                \"name\": \"SL\",\n                \"description\": \"Sick leave\"\n            },\n            \"availableLeaves\": 1,\n            \"usedLeaves\": 4\n        },\n        {\n            \"username\": null,\n            \"leaveType\": {\n                \"name\": \"CL\",\n                \"description\": \"Casual leave\"\n            },\n            \"availableLeaves\": 3,\n            \"usedLeaves\": 2\n        },\n        {\n            \"username\": null,\n            \"leaveType\": {\n                \"name\": \"EL\",\n                \"description\": \"Earned leave\"\n            },\n            \"availableLeaves\": 5,\n            \"usedLeaves\": 0\n        },\n        {\n            \"username\": null,\n            \"leaveType\": {\n                \"name\": \"CML\",\n                \"description\": \"Camp-Off leave\"\n            },\n            \"availableLeaves\": 5,\n            \"usedLeaves\": 0\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-04T16:37:13.914536005\",\n    \"error\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "adjust_user_leaves",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"userId\": \"4b5d7d7a-acb3-43a5-9b3a-b5e38e56edb3\",\n    \"leaveType\": \"CL\",\n    \"numberOfLeaves\": 6\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/admin/adjust_user_leaves",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"admin",
+												"adjust_user_leaves"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"userId\": \"92142c3b-0eee-41f3-81b5-b2f982e5470e\",\n    \"leaveType\": \"SL\",\n    \"numberOfLeaves\": 6\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{leave_baseUrl}}/leave/admin/adjust_user_leaves",
+													"host": [
+														"{{leave_baseUrl}}"
+													],
+													"path": [
+														"leave",
+														"admin",
+														"adjust_user_leaves"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 04 Sep 2025 12:34:57 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": true,\n    \"message\": \"Leaves adjusted Successfully\",\n    \"data\": [\n        {\n            \"leaveType\": {\n                \"name\": \"SL\",\n                \"description\": \"Sick leave\"\n            },\n            \"availableLeaves\": 6,\n            \"usedLeaves\": 4\n        },\n        {\n            \"leaveType\": {\n                \"name\": \"CL\",\n                \"description\": \"Casual leave\"\n            },\n            \"availableLeaves\": 3,\n            \"usedLeaves\": 2\n        },\n        {\n            \"leaveType\": {\n                \"name\": \"EL\",\n                \"description\": \"Earned leave\"\n            },\n            \"availableLeaves\": 5,\n            \"usedLeaves\": 0\n        },\n        {\n            \"leaveType\": {\n                \"name\": \"CML\",\n                \"description\": \"Camp-Off leave\"\n            },\n            \"availableLeaves\": 5,\n            \"usedLeaves\": 0\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-04T18:04:57.939722481\",\n    \"error\": null\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "my_remainig_leaves",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{leave_baseUrl}}/leave/balances",
+									"host": [
+										"{{leave_baseUrl}}"
+									],
+									"path": [
+										"leave",
+										"balances"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 04 Sep 2025 12:36:18 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"leaveType\": \"SL\",\n            \"availableLeaves\": 2,\n            \"usedLeaves\": 3\n        },\n        {\n            \"leaveType\": \"CL\",\n            \"availableLeaves\": 5,\n            \"usedLeaves\": 0\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-04T18:06:18.211758625\",\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "POST leave/apply",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"leaveType\": \"EL\",\n  \"fromDate\": \"2025-09-10T08:28:26.313Z\",\n  \"toDate\": \"2025-09-10T09:56:14.512Z\",\n  \"approver\":\"92142c3b-0eee-41f3-81b5-b2f982e5470e\",\n  \"reason\":\"I am Sick Test1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{leave_baseUrl}}/leave/apply",
+									"host": [
+										"{{leave_baseUrl}}"
+									],
+									"path": [
+										"leave",
+										"apply"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"leaveType\": \"SL\",\n  \"fromDate\": \"2025-09-04T08:28:26.313Z\",\n  \"toDate\": \"2025-09-04T09:56:14.512Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/apply",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"apply"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 04 Sep 2025 12:36:44 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Leave applied successfully\",\n    \"data\": {\n        \"requestId\": \"4b5d7d7a-acb3-43a5-9b3a-b5e38e56edb3\",\n        \"leaveType\": \"SL\",\n        \"fromDate\": \"2025-09-04T08:28:26.313\",\n        \"toDate\": \"2025-09-04T09:56:14.512\",\n        \"status\": \"PENDING\",\n        \"createdAt\": \"2025-09-04T18:06:44.495387\",\n        \"updatedAt\": \"2025-09-04T18:06:44.495462\"\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-04T18:06:44.520385129\",\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "get_all_applied_leaves",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{leave_baseUrl}}/leave/applied_status",
+									"host": [
+										"{{leave_baseUrl}}"
+									],
+									"path": [
+										"leave",
+										"applied_status"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/pending_leaves",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"pending_leaves"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 10 Sep 2025 10:31:43 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Pending leaves\",\n    \"data\": [\n        {\n            \"leaveType\": \"CL\",\n            \"status\": \"PENDING\",\n            \"reason\": \"Going to Trip\",\n            \"fromDate\": \"2025-09-09T08:28:26.313\",\n            \"toDate\": \"2025-09-09T09:56:14.512\"\n        },\n        {\n            \"leaveType\": \"CL\",\n            \"status\": \"PENDING\",\n            \"reason\": \"Going to Trip\",\n            \"fromDate\": \"2025-09-10T08:28:26.313\",\n            \"toDate\": \"2025-09-10T09:56:14.512\"\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-10T16:01:43.519843973\",\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "cancel_leave",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{leave_baseUrl}}/leave/cancel?leaveId=2feaa4cd-6902-478a-b54d-c1e2068bf1ee",
+									"host": [
+										"{{leave_baseUrl}}"
+									],
+									"path": [
+										"leave",
+										"cancel"
+									],
+									"query": [
+										{
+											"key": "leaveId",
+											"value": "2feaa4cd-6902-478a-b54d-c1e2068bf1ee"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/cancel?leaveId=2feaa4cd-6902-478a-b54d-c1e2068bf1ee",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"cancel"
+											],
+											"query": [
+												{
+													"key": "leaveId",
+													"value": "2feaa4cd-6902-478a-b54d-c1e2068bf1ee"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 10 Sep 2025 11:44:03 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Leave Cancelled Successfully\",\n    \"data\": null,\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-10T17:14:03.289928525\",\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "get_leave_satus",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{leave_baseUrl}}/leave/status?leaveId=2feaa4cd-6902-478a-b54d-c1e2068bf1ee",
+									"host": [
+										"{{leave_baseUrl}}"
+									],
+									"path": [
+										"leave",
+										"status"
+									],
+									"query": [
+										{
+											"key": "leaveId",
+											"value": "2feaa4cd-6902-478a-b54d-c1e2068bf1ee"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/status?leaveId=2feaa4cd-6902-478a-b54d-c1e2068bf1ee",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"status"
+											],
+											"query": [
+												{
+													"key": "leaveId",
+													"value": "2feaa4cd-6902-478a-b54d-c1e2068bf1ee"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 10 Sep 2025 11:57:13 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Leave Status fetched successfully\",\n    \"data\": {\n        \"leaveId\": \"2feaa4cd-6902-478a-b54d-c1e2068bf1ee\",\n        \"leaveType\": \"EL\",\n        \"status\": \"CANCELED\",\n        \"reason\": \"I am Sick Test1\",\n        \"fromDate\": \"2025-09-10T08:28:26.313\",\n        \"toDate\": \"2025-09-10T09:56:14.512\"\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-10T17:27:13.675848619\",\n    \"error\": null\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "authService",
+			"item": [
+				{
+					"name": "signup",
+					"item": [
+						{
+							"name": "POST signup",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"veerankis\",\n  \"password\": \"saikumar\",\n  \"email\": \"saikumarveeranki1@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "POST signup",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"veerankis\",\n  \"password\": \"saikumar\",\n  \"email\": \"saikumarveeranki1@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/signup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"signup"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 04 Sep 2025 01:55:04 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"username\": \"veerankis\",\n        \"email\": \"saikumarveeranki1@gmail.com\",\n        \"message\": \"user created successfully\",\n        \"roles\": [\n            \"ROLE_USER\"\n        ]\n    },\n    \"message\": \"Successfully registered\",\n    \"status\": 200,\n    \"timestamp\": \"2025-09-04T07:25:04.580698394\",\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "GET signup/{username}",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/signup/:username",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"signup",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "veerankis",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GET signup/{username}",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/signup/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"signup",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "veerankis",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 04 Sep 2025 01:54:21 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": false,\n    \"message\": \"Username available to register\",\n    \"status\": 200,\n    \"timestamp\": \"2025-09-04T07:24:21.493161336\",\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "GET signup/check/{email}",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/signup/check/:email",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"signup",
+										"check",
+										":email"
+									],
+									"variable": [
+										{
+											"key": "email",
+											"value": "saikumarveeranki1@gmail.com",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GET signup/check/{email}",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/signup/check/:email",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"signup",
+												"check",
+												":email"
+											],
+											"variable": [
+												{
+													"key": "email",
+													"value": "saikumarveeranki1@gmail.com",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Content-Disposition",
+											"value": "inline;filename=f.txt"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 04 Sep 2025 01:53:58 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": false,\n    \"message\": \"Email available to register\",\n    \"status\": 200,\n    \"timestamp\": \"2025-09-04T07:23:58.752084604\",\n    \"error\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "PATCH admin/modify_user_roles",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"veerankis\",\n    \"removedRoles\": [],\n    \"addedRoles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_SUPER\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/modify_user_roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"modify_user_roles"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"string\",\n  \"removedRoles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"addedRoles\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/modify_user_roles",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"modify_user_roles"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"username\": \"string\",\n  \"roles\": [\n    \"string\",\n    \"string\"\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "POST admin/add_role",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"roleName\": \"ROLE_SUPER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/add_role",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"add_role"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"roleName\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/add_role",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"add_role"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "string"
+								}
+							]
+						},
+						{
+							"name": "GET admin/fetch_all_users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin/fetch_all_users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"fetch_all_users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/admin/fetch_all_users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"fetch_all_users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"enabled\": true,\n    \"userProfileDao\": {\n      \"username\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"job_title\": \"string\",\n      \"line_manager\": \"string\",\n      \"gender\": false,\n      \"date_of_birth\": \"1992-10-08\",\n      \"joining_date\": \"1960-10-30\",\n      \"end_date\": \"1985-07-16\"\n    }\n  },\n  {\n    \"username\": \"string\",\n    \"email\": \"string\",\n    \"roles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"enabled\": false,\n    \"userProfileDao\": {\n      \"username\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"job_title\": \"string\",\n      \"line_manager\": \"string\",\n      \"gender\": true,\n      \"date_of_birth\": \"2020-05-29\",\n      \"joining_date\": \"1985-06-29\",\n      \"end_date\": \"1992-04-17\"\n    }\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "GET admin/fetch_all_roles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin/fetch_all_roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"fetch_all_roles"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/admin/fetch_all_roles",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"fetch_all_roles"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"roleName\": \"string\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "admin/get_user_names_from_uuid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"uuids\": [\"4b5d7d7a-acb3-43a5-9b3a-b5e38e56edb3\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/get_user_details_from_uuid",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"get_user_details_from_uuid"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"uuids\": [\"4b5d7d7a-acb3-43a5-9b3a-b5e38e56edb3\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/get_user_names_from_uuid",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"get_user_names_from_uuid"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 04 Sep 2025 10:47:24 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"uuid\": \"4b5d7d7a-acb3-43a5-9b3a-b5e38e56edb3\",\n            \"username\": \"saikumar\"\n        }\n    ],\n    \"message\": \"successfully fetched the user names\",\n    \"status\": 200,\n    \"timestamp\": \"2025-09-04T16:17:24.49123237\",\n    \"error\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "POST login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"json = pm.response.json();",
+									"pm.environment.set(\"authToken\", json.data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"veeranki\",\n  \"password\": \"saikumar\",\n  \"email\": \"saikumarveeranki2@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"saikumar\",\n  \"password\": \"saikumar\",\n  \"email\": \"saikumarveeranki2@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Sep 2025 12:37:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"eyJraWQiOiI2M2Y2NGIwMC0wNjM1LTRmMGYtYWQ1Zi0zZTc5YjI5MDJhMTEiLCJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sInByZWZlcnJlZF91c2VybmFtZSI6InNhaWt1bWFyIiwic3ViIjoiNGI1ZDdkN2EtYWNiMy00M2E1LTliM2EtYjVlMzhlNTZlZGIzIiwiaWF0IjoxNzU2OTg5NDM5LCJleHAiOjE3NTY5OTMwMzl9.Pgv_iDoToNbB-2Vq1m0efYtLZYL5shPXAzsqF0SGq6KnkN_W4VOfXmxeViQ7q9o2cItt3x9aBWk-6IZ_C-EFHBXyXMSyQl6UX4CridRDDg6MpO-yIskYw2IDQetmUbKq_dBqg32hBL3HbwzXSdFwBXn5ut2P4bEqi4ZrmEUoG6uRog-2havdPlcQ1nt-Gb48IAa4lSRTTVfOl8ZZntRqtef3mJYus3PVSItcbHS8g1QEtImtCw0LrpHYFcm4Lk-20g0PiaVljWhA1HJg4Q-UkT006ffH15S0amLXwqa2oy5XCpOoMQbL0c3aRgF9o6GMceOTGdKcLGwpX1WEGhXTpLmcE2PV9bLMoOwPmbbmgQIQ632lgbCJlMZ861mHs4jPNY0EjKxFUuBA9BV-QCAVbSKMl8isPOWHSzyAwsWhdrkFaL8PCOglIomDGrcW24YPg3RIIB-jhcQRHnaxOxSHCamrJZXd6wStrKidqcfnHgq3IDPufNq5AV0_dE0WSDWoPfvr_jpOppXGoF5rmefkDfXdyjlF5emAhZfHvZ0z5dtvDy9vMnewhqu-z2whAeREutUx1rVZO3KyDlN1daC5B6nGSYy0CF1RSixmzUJHDUeBZaRevhUuEBxDi1I6vnkv22aY1AhVoK3Wx7ftOTSNG60DKrOOv9r5SEWvd3GFIQY\",\n        \"scope\": null,\n        \"tokenType\": \"Bearer\",\n        \"iat\": \"2025-09-04T12:37:19.407+00:00\",\n        \"eat\": \"2025-09-04T13:37:19.407+00:00\"\n    },\n    \"message\": \"Successfully logged in\",\n    \"status\": 200,\n    \"timestamp\": \"2025-09-04T18:07:19.556346257\",\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "PATCH user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"veerankis\",\n  \"first_name\": \"saikumar\",\n  \"last_name\": \"veeranki\",\n  \"job_title\": \"Software Developer\",\n  \"line_manager\": \"saikumar\",\n  \"gender\": true,\n  \"date_of_birth\": \"1998-08-15\",\n  \"joining_date\": \"2025-07-29\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"veerankis\",\n  \"first_name\": \"saikumar\",\n  \"last_name\": \"veeranki\",\n  \"job_title\": \"Software Developer\",\n  \"line_manager\": \"saikumar\",\n  \"gender\": true,\n  \"date_of_birth\": \"1998-08-15\",\n  \"joining_date\": \"2025-07-29\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Sep 2025 12:38:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"username\": null,\n        \"first_name\": \"saikumar\",\n        \"last_name\": \"veeranki\",\n        \"job_title\": \"Software Developer\",\n        \"line_manager\": \"saikumar\",\n        \"gender\": true,\n        \"date_of_birth\": \"1998-08-15\",\n        \"joining_date\": \"2025-07-29\",\n        \"end_date\": null\n    },\n    \"message\": \"User profile updated successfully\",\n    \"status\": 200,\n    \"timestamp\": \"2025-09-04T18:08:21.448861378\",\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "GET auth/.well-known/jwks.json",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/auth/.well-known/jwks.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								".well-known",
+								"jwks.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth/.well-known/jwks.json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										".well-known",
+										"jwks.json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Sep 2025 12:38:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"keys\": [\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"92a7a7a3-b8e6-471b-9fdf-70342d5fe6da\",\n            \"alg\": \"RS256\",\n            \"n\": \"ALXGOsETKKyn8jf5oaxvD1QtTKp04la3zh6SO1Y8mW1f8xBjisrvLpyuVWuMuerjd7KmBNcg9YKipg3rbOfNEmmX-C7iL4Ptkx2tFbU_mb8UT-slqMI3sUDTsRzBWtMpJYRXaYQlReNwWY-QZHra8gBKay2yDbdUYM36OJVDmfZfpvrGLPUfqkqVTbp4nmxvTkDpUav5LEUgHUnbhm3OPBOm1LEb8pl2xhnsig5O_f2pVIRIFBHxeI7OjKFcvMdXMzq7r2Zwh-ojsj_Ff6BOGeGOwbdaqwKYDQQ4VvZAdhMdaaIjYSdL5ENPWgOtmMxCc2kRep21AOD1x2_MdAq9ymPOkkKAqz9a2c-BLPRr69loGotOvHPMbxkH2G0N9ldIVLYt3QRTGn1b4VqxGQWGyaQTJhxgJssBlO0H4cOq30U0r2KaT7uqj-L6GuQ2ADlJT5rMCWyT19wPpz7woM6E4W494gzdsVj36bgvWi-gz5DSMLb1-UWjmvRLlvaXC1NYGnY4qy4QLPUGabk90ecgL670f72MIdSR1Iu5mTKxjwnKdvsb-crjfnPG7Dgp5xambGvUZhDpsHYrD0I53NKYS5t3LAa3CIRwjgIN49vxLuKfMyzY4oN-bu1UGnqYkjDavLQHrE80paq_MTCyKnbIwTWTE4z-WYu4682rN2aGL5cp\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"ca2b6dd8-1c97-4f93-916a-eb491f9167f1\",\n            \"alg\": \"RS256\",\n            \"n\": \"AKIGRHc_9-snSZtiyJm7uFutkUycPxmb5pdV82I836UaCvzjN9bOJwcehZN9LWiStVSd9ZgEnIp_WyMCM4IELy0fL30cMFqmF27wLiwI_Qk0xVOM23k7L7FGe59y369aOF3idH0IWAMnUGtG1rjkwzyuO_ptuYPaO-kq3u5zsuSaS94s1qXg4ZQSP9HORqo-4uu74l9K0oCEudPbvI49uEtJq8M32b-L7AvW_SIe2VYCAqIznIbaQns3g3g3nT_qEYhqub0BVxTvuYxdc_tQOXbspEf2UQGfiQ_Cz_0T_4iPa-gNLK1pMxhsVDCemB0d6QhRrhQCYgZy4Y37qusoW5Qixxtj2DIcPSfvpggXulGywPKsfJpJUnRBMMVaWKuC7iZ92D5mQmlXK7x1ftVmtgsPx8VlMdZSm7CO4pF1Wh0KnYNdCBIlItYTIF_ceJfUARdmyNwa-KNn5wbCwKgfreiBcnLSfSQlzEJCKPtGuMbMKo0Eu_y4rqVlvaIrcZJ8CobfYNt6KVqGhSfQZTmH27ry4LGDyiOp2IKl0xJu-HRvaUZbP9PQaCNCI4yQ5OcCxkMemnXCxf-9raxWGIYr4T6zWj-zplV42Nnqhfh27Tdpu6Q9_U204mLP3bL2zKAk0bO6dSg-E2NXNPDI8P6JZK5pCYyrFMOxbLvtl9sLIQw7\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"f07e1907-87f4-4405-8a31-106ee57aefa5\",\n            \"alg\": \"RS256\",\n            \"n\": \"AMItJUXu7khjuyjyqaCkG_Dm2JfV5cYs_VlwXsSo0PWrTCGsIB61BjYkmKnGoXyelWj_6mcN8jZ4h1gyGcb11L1Xugb53D_86XhRzx2bGudMrzmsSn-VM9eGf-46N_aN5MV_HtW0tYMEJ13zQ-9z-RsEAnV1FvFW_gJsqpUH8tQ23ABIJUfQoNySr-eyfu3_zoes9Spm-9Z-GyHClxURcrIXWwzrusrxfyiKFg7akhN7UxA4jyGC_VkMSZroAsDC7r6PeHrB-kYEOCL1jT77dDFvG5gwkHWrTCU9tFDMImsA8aiin0SrHAcYyiAccVRkexQniL8fU1XyO6Ub-wQcToICmw9t4KxZ3ArMQqzlTyypwwBaG_zwXxLhmBoRiydyLKnSI-osH1hjb8juAJpqiYrwgFfZjNkNDNqI8vth1dBooMjIc6-wNoVCTZNeLAPz6Wly2Dikh-5QcAUGiw4p6O5d4ZoOCQdjN4Ls9_OGdbxl6XUz2tg8xagiX30_8Ic3kRDJruDImzHGjCHcmr7hxcenZ1mQrU5a-V2Qz5PuWAtMY1hRbfi5GPPslpr3NsFuyD1Tcn0JX7vPUZPsJkFuG_yjOxSI46o2iwYZrObHhqJrM4xRVqROPJqnGVsVlo4d9bihYiF9SSNiX1hoIw16-EW5txx5w_QoE6PbNIujvytF\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"d4ecfd3c-99b1-45b7-9c16-86adbeb64599\",\n            \"alg\": \"RS256\",\n            \"n\": \"ANbQ_UcPjVlfaDm_RApWz5Z97TlZLzrZNxjtOWmHjT1qp3CB8oXsutInnECt3KNaJnHGOQPHtkNuV3mNhXQ0srU84PTGRNofaKNepXis51TZWZzoiTnqGYZHvFlnoKky8W3BHtQknGeOHIBNc_oVYDIz0jGXojrB47FKzVLTQvYiJE37VR8w-IUvZ3nbvWPRKrhdjfZrEayzkaH0nqo9e43unr8xOY_bm6c3HHS-6CJJgO87GbUdpL6OUBALVAVvve9393aliWGHP9tQGYS-cLXqIOaTGfeIxcmeEOf1lisc4_JgXtestWWRDGE5Chbcjmo-zI-odU68k0HSx0xTOu9le5NcACfwNx0lndtRt_30EhFod2LslZnV7p95T641rpyrm9zf3UaKmuxlGssxK-h4XZxg9Ts0W59fxPdNcjeoIJwT3KQJcMEY2tqr2oEWd-7LB8j4JWkYfVklDGuWCE_4rb84y-VjUgdemloyiBzPAnTsMrzwkfJwR5uVD2Wp6vRe2c4Ef9BxEL3tdzw3Cl_3IU8EBkHBdz-tkolR38sOCJZZg4FmZ0Q5ZrLe6TS8qSTsu61IlZNDHPRZy2I-WG1_b14akCNLDXYdC9DaYLJ8Y5BfPg14RJMQxJDjWV9psM-o4EGrlnfPy46Ot6xv8-AIW5s6yUc3z7-7Cg3KkOJL\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"63f64b00-0635-4f0f-ad5f-3e79b2902a11\",\n            \"alg\": \"RS256\",\n            \"n\": \"AI1KJyiH6QGm1CXMi_haF3EXgatn9YacJUTeDCqpZ2-Uc2kcVvow4NWqgEG8JghyM-eff9MOfvS5fU5eFTqtxRN05NjAv806KkazLJrcw1EVNpwuGeOyvQ4d7Ibz2uEAsq-xE7huBSgYZVhwJ--8tjZ929ODAanz5wye_hIwC7BNwmRwv7wwL69bUvqQb_qhOoPM0zWtyIsK2S7aicDZT7TOBDYv3s_HHrktUUlNYkFfRwos8I7Qs7NCRNJjA70kIAjDyebXCymOQziE34DCw9GEjWotOw0R692RIuWY9e1ACRoPYLUwRXeEflCfH8HS-UQ_Sb62RAb89wbMJ64QLgk_IuNAkMfdzKaeQrw_XWnnihp2qF6quOXGDawv_qUdP5j6yBzJMcXJ6oNu9kT5T7iViTX4-zA27t78Nb7l43LcasdyT1nn1RLyareyK3ZBkMK1Yf5KpGTSIBLVxb_wGiDInRRMV6gZiVYiWrXgUuV2BODgk6TrV5jXlAdSoDUYdMTW49o0-BH1iMgqPwwFn56s0r15ibXYrCgE19M0MwLE9LKZwaFS-KMZ_LyUq2w7v90oYkjmD8UEM9PsyybXsq2_u35xghQBgRZWKn5f77PWCD-SlW0RWaJqEGbZBECTEnYQDzvEcVEIZ9gHHNzsCQEAb3lsEpYX0wf1z2DodUVN\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"29e826b5-f97e-424b-8d10-b69df170a6a2\",\n            \"alg\": \"RS256\",\n            \"n\": \"ALjsbkleL50F4tm7YFCBIpV-5gxlbMtDHtzE5G7lBdd7bfHX81pp2a12CXGUoOZ5Ip4YyARbWXIb5AOqij54QtayQFr2c3Ntms9a-PfgLDsB7qcyE3Xvmi-bsTi6FsBorCBASgwbyz6RGN8IddqHrclYqZcn63Vb3Qb8mKFQNEtMM2EWbJglqOaCwbtC0iTs1wz7i18DFoPBOhZ_IJvCShciR-GShlC7_D7TurV6EUgOX22ZRtBemZFw3m7izzSPrHYpaY82Bsc4tb4BtOvRK5T1FHhUruB5si129ulAtm3lqhK9cHOboWnxYMGS-Jy1JTYhPNUksUH1KjJu7fiPYMPMMjksMSeRfaJ0nER2-9baUwNWwo1BNztqOsPHfJeTlApLF0OhOjjrIYN2DQCfGsMmusHjNkNCv8CRJfkMDoLCWIbpK6YM8Vivezepm6pYDyya9kuKlQlNNknkLuGOeiwq4bv6KfP3SsVQrt1ExNvorenQbNWH1fO-hSWYX51VvgPjUqJeR6eNUnXPQN0o0907B0LqpDLciVTV5re6Ee4hMJ_ICCMBZfgCCUC5of43CnbP0RNj_VFk309B_h2Wb7ebGPlJFMqCUwkhnxmW3KR781WvNmUNwVu2zNIgjCq2IYc6Ks51kRe0QLIM4t6SulJKqrvbckZta7wzlUYA9E0L\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"02c1ba64-215c-4d65-bde7-d055f4ed7036\",\n            \"alg\": \"RS256\",\n            \"n\": \"ANMuDOLf0BNAMmjCJsYKELtMhyTMkX3RXYbpjyeqYFqN8txRzoeeWCDW-8DjVs8YO0_o-J8UX8MK0Nq17DxqSX_IpNpLIbj7HypMih1V-J-EiVDB_Bx3v-dRGd_JmQP6xMtys6okGRd8AzJrQ3seeOIpvRYQ2K2OR1eyrJkFq8UR-yxWuxepwGcO-OL8DcWMH4xGbmq63DtEKUt62cSoa8dTtBTLlC3dM1YsYPBYJtGAEijwX-RNSZGQKOcCggqeKn-RRRgenmL6Lw-_6cacsaYY5FQJfSquK2ph8IVxwurmek9Jp5csWdhO6TwhIUbQFUzqGFec2LYo0w0P1cw0sH28LNIRNQJsoUsobsVlDYZ7q5YJgYRO9g3Abjez0LEizWD0dVW6VxJg6vFY5yJTT31prThMsCM3sAq-lhXTq9KPIDRJo2Gg3Ac6Ge5w4SRjHmTWHnoyOg_gwNPsguhkoLP5oWn71hX5Apk1affT0l4BdrPGzk2RaeXBk17QZwXQcKt5OapYSm0QD51unYLO6yTOVe1tdQWTVfH0RmUAIhgWaj5jTKmchWxVQqr0NWpIvRyvo396wEiqmvObDGaE6-qFDX_k_Ja8hovxjjvSg_ZLsMMVMndD3j8FkSIHLj4JdVxon5jg48XB5kgZRDXZKhI9EPxyHF-qoQfx-Zrgak9v\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"a35c7ff6-aaad-45e8-9d6e-a8d7cf052fc7\",\n            \"alg\": \"RS256\",\n            \"n\": \"ALf7asYV7OCk-ZV9Vw0yaocCZNePELt8sqdrRuzGKH_aaUhCcRdDZHvBCJnASTTIeNgjDClTTopCmcXdLNBuUlYcrKhhqUqUozZiy5YQEiUltROLlR0m98qMHnKaZgm2WZ72DE9R8gKVCR87h8cHCmV--VUW5olOFleFUyQdlQyMZL7WF5rgo1QWoXJQqnKtSFVMFkstzyZzLXVxFX9N8Ugmzmbzlxwbqg9IhkZgc3T51CMYogEEwbwHiyF4Z35MV3uXfB0zFLNrbSLQmVLx30VHhleSgYuuLuVqvAabexFwpC7x2Pj1gcn5-XlbF3GubIES2C_12P5bs2cz78NTnYfLD4sfwyKi7ojnX3gJ4b1T03bS_2a7_ndqQyk-WZV15eQeO4WHr-o3XsFjmNdydOirQCtgS6h2Z55S_buUD27_GzMjMyBPM2AheWUNcx7oS510iSToy1hCOmpPpPcDCEcr-3nfjaakeRqiRwreJBNuww7SYEbnn8oUVrBzTLRjMh9A5fzBtvB_9qQGWDMgc9Ude16qmTkFXnkh4q2G96rrlrxkpFNbP0bYEkch5OwaNvjqH_vhlQjNyUAOtAkpaMvC8YJOVC7ztHCimeNVWMoOwQg9CeFMz4JHr4HQYKx5qTNPNmwxpihJ1Yrj9DuD_f4-HB6_BVTQMV2TWGLbV06d\"\n        },\n        {\n            \"kty\": \"RSA\",\n            \"e\": \"AQAB\",\n            \"use\": \"sig\",\n            \"kid\": \"ee5f1e67-94e6-4b1d-aeef-d67bf8d71500\",\n            \"alg\": \"RS256\",\n            \"n\": \"AMRziLuboREPZH3JX994cahY0d16KosIR8wL4uOousf_1lFR0zWaX8IZkc3iQ2L37ZExffVc3sk0_zcCQg379Ci89Lbd_2CHbMr0ONUVfwZ9oII74RDq1SuSeYXftF9AeKHovpuiWV3zNr3k7s103dFTWL2KJLJAmqSyK4XXY5spSLjAIIH4H0RfH6NNZIfCzya3d5_wv4NZHYSUw1thJ_S7sphb7-fmQ6fRW5awKNIfycVF6vcldMlsS9OtWYyJu_jAwc4730rKGrfiyzuELONzGqLUuXgMNaf3DdOJvEzNCJMj9YZyAIk_uY-f_7Mw8Tt__xpAUuEI1TuX_TKka0hbtSHqE3zToRAsVlx9lpRsNOkfQtWW3ypacxGdpBXKxvhimVBiO_fEk-2xSgsG2Sl1nFXgvezl-aywb15z9KryPEeIQsO0GeFN8rCCh6Px32-CIXQ8m-JibqpQcQAjIjJ3o98YJnXT109kilD4P5y5Lm3EHa-M_rGNqdLGOw-Qg9N1CMBEz96rnqWLgbkXXuScYVJiSvlRk4niZ33EpDsrVpPT6__YTobU6-hzt52XMzTc9RCy-vE8GHp-opRN-OCxSk5pjTAYyihJri2PXoIuER0T-qpt1eK1_pj81LH4hSlMda3vL7FrbbJYowE6eD3WnWTj9490bIEXl206u_Pv\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
