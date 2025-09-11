@@ -243,6 +243,230 @@
 											"body": "{\n    \"success\": true,\n    \"message\": \"Leaves adjusted Successfully\",\n    \"data\": [\n        {\n            \"leaveType\": {\n                \"name\": \"SL\",\n                \"description\": \"Sick leave\"\n            },\n            \"availableLeaves\": 6,\n            \"usedLeaves\": 4\n        },\n        {\n            \"leaveType\": {\n                \"name\": \"CL\",\n                \"description\": \"Casual leave\"\n            },\n            \"availableLeaves\": 3,\n            \"usedLeaves\": 2\n        },\n        {\n            \"leaveType\": {\n                \"name\": \"EL\",\n                \"description\": \"Earned leave\"\n            },\n            \"availableLeaves\": 5,\n            \"usedLeaves\": 0\n        },\n        {\n            \"leaveType\": {\n                \"name\": \"CML\",\n                \"description\": \"Camp-Off leave\"\n            },\n            \"availableLeaves\": 5,\n            \"usedLeaves\": 0\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-04T18:04:57.939722481\",\n    \"error\": null\n}"
 										}
 									]
+								},
+								{
+									"name": "approveOrRejectLeave",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"leaveId\":\"50e61fb6-e6d6-49ab-8300-8f349436b77e\",\n    \"leaveStatus\":\"REJECTED\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/admin/change_leave_status",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"admin",
+												"change_leave_status"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"leaveId\":\"50e61fb6-e6d6-49ab-8300-8f349436b77e\",\n    \"leaveStatus\":\"APPROVED\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{leave_baseUrl}}/leave/admin/change_leave_status",
+													"host": [
+														"{{leave_baseUrl}}"
+													],
+													"path": [
+														"leave",
+														"admin",
+														"change_leave_status"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 11 Sep 2025 00:57:19 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": false,\n    \"message\": \"Illegal leave status change You can not change the leaves status which are once approved/rejected\",\n    \"data\": null,\n    \"statusCode\": 400,\n    \"timestamp\": \"2025-09-11T06:27:19.577460751\",\n    \"error\": {\n        \"path\": \"/leave/admin/change_leave_status\",\n        \"error\": \"Illegal leave status change You can not change the leaves status which are once approved/rejected\",\n        \"fieldErrors\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "fetch_requested_leaves",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{leave_baseUrl}}/leave/admin/fetch_requested_leaves?leaveStatus=APPROVED",
+											"host": [
+												"{{leave_baseUrl}}"
+											],
+											"path": [
+												"leave",
+												"admin",
+												"fetch_requested_leaves"
+											],
+											"query": [
+												{
+													"key": "leaveStatus",
+													"value": "APPROVED"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{leave_baseUrl}}/leave/admin/fetch_requested_leaves?leaveStatus=APPROVED",
+													"host": [
+														"{{leave_baseUrl}}"
+													],
+													"path": [
+														"leave",
+														"admin",
+														"fetch_requested_leaves"
+													],
+													"query": [
+														{
+															"key": "leaveStatus",
+															"value": "APPROVED"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 11 Sep 2025 02:09:38 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": true,\n    \"message\": \"successfully fetched user requested leaves\",\n    \"data\": [\n        {\n            \"leaveId\": \"d9e28349-a1c4-4934-9453-5f3c45b08743\",\n            \"leaveType\": \"CL\",\n            \"status\": \"APPROVED\",\n            \"reason\": \"Going to Vacation\",\n            \"fromDate\": \"2025-09-10T08:28:26.313\",\n            \"toDate\": \"2025-09-10T09:56:14.512\"\n        },\n        {\n            \"leaveId\": \"d394a0d1-2a73-4870-a6c4-3efc9e29e554\",\n            \"leaveType\": \"EL\",\n            \"status\": \"APPROVED\",\n            \"reason\": \"I am Sick Test3\",\n            \"fromDate\": \"2025-09-10T08:28:26.313\",\n            \"toDate\": \"2025-09-10T09:56:14.512\"\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-11T07:39:38.718068678\",\n    \"error\": null\n}"
+										}
+									]
 								}
 							]
 						},
